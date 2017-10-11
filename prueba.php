@@ -1,9 +1,9 @@
 <?php
+	require_once('config/paraConexion.php');
 	include 'conectar.php';
 	include 'crea.php';
 
-	$con = new BaseDatos();
-
+	$con = new BaseDatos($host, $port, $dbname, $user, $pass);
 	try{
 		$query = $con->prepare("select table_name from information_schema.tables where table_schema = 'public'");
 		$query->execute();

@@ -38,6 +38,7 @@ class creaClase
 		}
 		fwrite($file, '}'.PHP_EOL);
 		fwrite($file, '?>'.PHP_EOL);
+		fclose($file);
 	}
 }
 ?>

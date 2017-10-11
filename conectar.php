@@ -1,17 +1,13 @@
 <?php
 class BaseDatos extends PDO
 {
-	private $dbname = 'gobierno';
-	private $host = '192.168.0.104';
-	private $user =  'burocrate';
-	private $pass = 'cisco';
-	private $port = 5432;
+
 	private $dbh;
 
-	public function __construct()
+	public function __construct($p_host, $p_port, $p_dbname, $p_user, $p_pass)
 	{
 		try{
-			$this->dbh = parent::__construct("pgsql:host=$this->host;port=$this->port;dbname=$this->dbname;user=$this->user;password=$this->pass;");
+			$this->dbh = parent::__construct("pgsql:host=$p_host;port=$p_port;dbname=$p_dbname;user=$p_user;password=$p_pass;");
 		} catch (PDOException $pe){
 			echo $pe->getMessage();
 		}
